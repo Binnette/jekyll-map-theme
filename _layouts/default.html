@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+<title>
+  {%- if title -%}{{ title }}
+  {%- elsif page.title -%}{{ page.title }}
+  {%- else -%}{{ site.title }}
+  {%- endif -%}
+</title>
+
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="robots" content="index,follow">
+
+<link rel="stylesheet" href="/assets/styles.css">
+
+</head>
+<body>
+
+<main>{{ content }}</main>
+
+<footer>
+    <hr />
+    Website sources on <a href="https://github.com/{{site.github_username}}/{{site.github_repo}}">GitHub</a>
+</footer>
+
+</body>
+</html>
