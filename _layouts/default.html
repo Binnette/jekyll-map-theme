@@ -1,31 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>
-  {%- if title -%}{{ title }}
-  {%- elsif page.title -%}{{ page.title }}
-  {%- else -%}{{ site.title }}
-  {%- endif -%}
-</title>
+    <title>
+        {%- if title -%}{{ title }}
+        {%- elsif page.title -%}{{ page.title }}
+        {%- else -%}{{ site.title }}
+        {%- endif -%}
+    </title>
 
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="robots" content="index,follow">
+    <meta name="description"
+        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="robots" content="index,follow">
 
-<link rel="stylesheet" href="{{ "/assets/css/styles.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "
+        /assets/css/styles.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+        body {
+            background-image: url('{{ site.baseurl }}/assets/img/map.png');
+            background-repeat: repeat;
+        }
+    </style>
 
 </head>
+
 <body>
 
-<main>{{ content }}</main>
+    <main>{{ content }}</main>
 
-<footer>
-    <hr />
-    Website sources on <a href="https://github.com/{{site.github_username}}/{{site.github_repo}}">GitHub</a>
-</footer>
+    <footer>
+        <hr />
+        Website sources on <a href="https://github.com/{{site.github_username}}/{{site.github_repo}}">GitHub</a>
+    </footer>
 
 </body>
+
 </html>
