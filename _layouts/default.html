@@ -17,8 +17,7 @@
         content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="robots" content="index,follow">
 
-    <link rel="stylesheet" href="{{ "
-        /assets/css/styles.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css?v=" | append: site.github.build_revision | relative_url }}">
     <style>
         body {
             background-image: url('{{ site.baseurl }}/assets/img/map.png');
