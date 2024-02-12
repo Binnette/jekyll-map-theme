@@ -1,5 +1,11 @@
 <!doctype html>
+{%- if lang -%}
+<html lang="{{lang}}">
+{%- elsif page.lang -%}
+<html lang="{{page.lang}}">
+{%- else -%}
 <html lang="en">
+{%- endif -%}
 
 <head>
 
@@ -20,7 +26,11 @@
     <link rel="stylesheet" href="{{ "/assets/css/styles.css?v=" | append: site.github.build_revision | relative_url }}">
     <style>
         body {
+            {%- if site.jekyll-map-theme.background_image -%}
+            background-image: url('{{ site.baseurl }}/assets/img/{{ site.jekyll-map-theme.background_image }}.png');
+            {%- else -%}
             background-image: url('{{ site.baseurl }}/assets/img/map_icons.png');
+            {%- endif -%}
             background-repeat: repeat;
             background-size: 151px;
             background-color: #faf9f6;
@@ -34,7 +44,7 @@
     <main>{{ content }}</main>
 
     <footer>
-        <hr />
+        <hr>
         Website sources on <a href="https://github.com/{{site.github_username}}/{{site.github_repo}}">GitHub</a>
     </footer>
 

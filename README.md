@@ -17,7 +17,20 @@ gem "jekyll-map-theme"
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
+title: YOUR TITLE # to replace with the title of your website
+description: >- # to replace with your description
+  I am the description of your website.
+  I can be on multiple lines.
+github_username: YOUR_USERNAME # to replace with your github username
+github_repo: YOUR_REPO # to replace with the repo name of your website using the theme
+
+# Theme settings
 theme: jekyll-map-theme
+
+jekyll-map-theme:
+  # Use this parameter to change the image background
+  # Possible values: map-icons, rtk or camera
+  background_image: map-icons
 ```
 
 And then execute:
